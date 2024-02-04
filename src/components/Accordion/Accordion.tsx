@@ -1,10 +1,18 @@
 import React, {JSXElementConstructor} from "react";
 
-function Accordion() {
+type AccordionPropsType = {
+    titleValue: string
+}
+function Accordion(props: AccordionPropsType) {
+    console.log("Accordion rendering")
     return <div>
-        <AccordionTitle />
+        <AccordionTitle title={props.titleValue}/>
         <AccordionBody />
     </div>
+}
+
+type AccordionTitlePropsType = {
+    title: string
 }
 
 function AccordionTitle() {
