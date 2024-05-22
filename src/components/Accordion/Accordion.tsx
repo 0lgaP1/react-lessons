@@ -1,24 +1,37 @@
 import React, {FunctionComponent} from "react";
 
-
 type Test = {
     name: string
     age: number
 }
 
 type AccordionPropsType = {
+    obj?: Test
     titleValue: string
-    obj: Test
-    onClick: () => void
+    collapsed: boolean
+    onClick?: () => void
 }
 
-function Accordion(props: AccordionPropsType) {
+export function Accordion(props: AccordionPropsType) {
     console.log(props)
     console.log("Accordion rendering")
-    return <div>
-        <AccordionTitle title={props.titleValue} age={12}/>
-        <AccordionBody title={props.titleValue}/>
-    </div>
+        return <div>
+            <AccordionTitle title={props.titleValue} age={12}/>
+            {!props.collapsed && <AccordionBody title={props.titleValue}/>}
+        </div>
+
+
+    // if (props.collapsed) {
+    //     return <div>
+    //         <AccordionTitle title={props.titleValue} age={12}/>
+    //     </div>
+    // } else {
+    //     return <div>
+    //         <AccordionTitle title={props.titleValue} age={12}/>
+    //         <AccordionBody />
+    //     </div>
+    // }
+
 }
 
 type AccordionTitlePropsType = {
@@ -29,7 +42,7 @@ type AccordionTitlePropsType = {
 function AccordionTitle(props:AccordionTitlePropsType) {
     console.log("AccordionTitle rendering")
     return (
-        <h3>Меню</h3>
+        <h3>{props.title}</h3>
     )
 }
 
@@ -47,12 +60,4 @@ const AccordionBody:FunctionComponent<AccordionBodyType> = ({ title }) => {
         </ul>
     )
 }
-export default Accordion;
 
-const a = {
-    name: 'aaa',
-    age:121212,
-    subject: 'adsdasd'
-}
-
-const {name,} = a
