@@ -1,4 +1,4 @@
-import React, {FC, FunctionComponent} from "react";
+import React, {FunctionComponent} from "react";
 
 
 type Test = {
