@@ -2,7 +2,6 @@ import React, {FunctionComponent} from "react";
 
 type Test = {
     name: string
-    age: number
 }
 
 type AccordionPropsType = {
@@ -16,10 +15,9 @@ export function Accordion(props: AccordionPropsType) {
     console.log(props)
     console.log("Accordion rendering")
         return <div>
-            <AccordionTitle title={props.titleValue} age={12}/>
+            <AccordionTitle title={props.titleValue} />
             {!props.collapsed && <AccordionBody title={props.titleValue}/>}
         </div>
-
 
     // if (props.collapsed) {
     //     return <div>
@@ -31,12 +29,10 @@ export function Accordion(props: AccordionPropsType) {
     //         <AccordionBody />
     //     </div>
     // }
-
 }
 
 type AccordionTitlePropsType = {
     title: string
-    age: number
 }
 
 function AccordionTitle(props:AccordionTitlePropsType) {
@@ -45,7 +41,6 @@ function AccordionTitle(props:AccordionTitlePropsType) {
         <h3>{props.title}</h3>
     )
 }
-
 
 type AccordionBodyType = {
     title: string
