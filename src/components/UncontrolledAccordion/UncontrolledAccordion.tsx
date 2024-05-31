@@ -1,17 +1,14 @@
 import React, {FunctionComponent, useState} from "react";
 
-
-
 type AccordionPropsType = {
     titleValue: string
     //collapsed: boolean
     onClick?: () => {}
 }
 
-
 export function UncontrolledAccordion(props: AccordionPropsType) {
 
-    let [collapsed, setCollapsed] = useState(true);
+    let [collapsed, setCollapsed] = useState(false);
 
     console.log(props)
     console.log("UncontrolledAccordion rendering")
