@@ -23,7 +23,7 @@ export function App() {
             <UncontrolledRating value={ratingValue} onClick={setRatingValue} />
             <Rating value={ratingValue} onClick={setRatingValue}/>
 
-            <UncontrolledOnOff />
+            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
             <OnOff on={switchOn} onChange={setSwitchOn}/>  {/*onChange={(on)=>{ setSwitchOn(on)}}*/}
 
         </div>
